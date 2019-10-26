@@ -39,7 +39,12 @@
 #include "Client.h"
 #include "./include/RestClient.h" 
 #include "ArduinoJson.h"
+
+#ifdef ESP32
+#include "WiFi.h"
+#else
 #include "WiFi101.h"
+#endif
 
 #define LIGHT_ON "{\"on\":true}"
 #define LIGHT_OFF "{\"on\":false}"
